@@ -1,0 +1,13 @@
+[
+  { "id": "livingroom", "name": "סלון" },
+  { "id": "furniture", "name": "ריהוט" },
+  { "id": "kitchen", "name": "מטבח ואלקטרוניקה" },
+  { "id": "bedroom", "name": "חדר שינה" },
+  { "id": "kids", "name": "חדר ילדים" },
+  { "id": "books", "name": "ספרים" },
+  { "id": "garden", "name": "גינה ומרפסת" },
+  { "id": "garden2", "name": "גינה ומרפסת ב'" },
+  { "id": "decor", "name": "עיצוב ונוי" },
+  { "id": "tools", "name": "כלים וסדנה" },
+  { "id": "other", "name": "שונות" }
+]

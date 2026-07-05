@@ -1,0 +1,469 @@
+[
+  {
+    "id": "philodendron-large",
+    "title": "פילדנדרון גדול",
+    "category": "garden",
+    "status": "available",
+    "description": "",
+    "images": ["philodendron-real.jpg"],
+    "thumbnail": "philodendron-silhouette.jpg"
+  },
+  {
+    "id": "philodendron-2",
+    "title": "פילדנדרון",
+    "category": "garden",
+    "status": "available",
+    "description": "",
+    "images": ["philodendron-2-real.jpg"],
+    "thumbnail": "philodendron-2-silhouette.jpg"
+  },
+  {
+    "id": "callisia",
+    "title": "קליסיה ריחנית",
+    "category": "garden",
+    "status": "available",
+    "description": "",
+    "images": ["callisia-real.jpg"],
+    "thumbnail": "callisia-silhouette.jpg"
+  },
+  {
+    "id": "succulents",
+    "title": "סקולנטים",
+    "category": "garden",
+    "status": "available",
+    "description": "",
+    "images": ["succulents-real.jpg"],
+    "thumbnail": "succulents-silhouette.jpg"
+  },
+  {
+    "id": "dragon-fruit",
+    "title": "קקטוס דרקון",
+    "category": "garden",
+    "status": "available",
+    "description": "",
+    "images": ["dragon-fruit-real.jpg"],
+    "thumbnail": "dragon-fruit-silhouette.jpg"
+  },
+  {
+    "id": "snake-plant",
+    "title": "סנסבריה",
+    "category": "garden",
+    "status": "available",
+    "description": "",
+    "images": ["snake-plant-real.jpg"],
+    "thumbnail": "snake-plant-silhouette.jpg"
+  },
+  {
+    "id": "bromeliad",
+    "title": "ברומליה",
+    "category": "garden",
+    "status": "available",
+    "description": "",
+    "images": ["bromeliad-real.jpg"],
+    "thumbnail": "bromeliad-silhouette.jpg"
+  },
+  {
+    "id": "jade-plant",
+    "title": "עץ הירק",
+    "category": "garden",
+    "status": "available",
+    "description": "",
+    "images": ["jade-plant-real.jpg"],
+    "thumbnail": "jade-plant-silhouette.jpg"
+  },
+  {
+    "id": "fern",
+    "title": "שרך",
+    "category": "garden2",
+    "status": "available",
+    "description": "",
+    "images": ["fern-real.jpg"],
+    "thumbnail": "fern-silhouette.jpg"
+  },
+  {
+    "id": "fishbone-cactus",
+    "title": "קקטוס פישבון",
+    "category": "garden2",
+    "status": "available",
+    "description": "",
+    "images": ["fishbone-cactus-real.jpg"],
+    "thumbnail": "fishbone-cactus-silhouette.jpg"
+  },
+  {
+    "id": "fiddle-leaf-fig",
+    "title": "פיקוס כינור",
+    "category": "garden2",
+    "status": "available",
+    "description": "",
+    "images": ["fiddle-leaf-fig-real.jpg"],
+    "thumbnail": "fiddle-leaf-fig-silhouette.jpg"
+  },
+  {
+    "id": "calathea",
+    "title": "קלתיאה",
+    "category": "garden2",
+    "status": "available",
+    "description": "",
+    "images": ["calathea-real.jpg"],
+    "thumbnail": "calathea-silhouette.jpg"
+  },
+  {
+    "id": "anthurium",
+    "title": "אנתוריום",
+    "category": "garden2",
+    "status": "available",
+    "description": "",
+    "images": ["anthurium-real.jpg"],
+    "thumbnail": "anthurium-silhouette.jpg"
+  },
+  {
+    "id": "spider-plant",
+    "title": "צמח אלמנה",
+    "category": "garden2",
+    "status": "available",
+    "description": "",
+    "images": ["spider-plant-real.jpg"],
+    "thumbnail": "spider-plant-silhouette.jpg"
+  },
+  {
+    "id": "asparagus-fern",
+    "title": "שרך אספרגוס",
+    "category": "garden2",
+    "status": "available",
+    "description": "",
+    "images": ["asparagus-fern-real.jpg"],
+    "thumbnail": "asparagus-fern-silhouette.jpg"
+  },
+  {
+    "id": "snake-plant-cluster",
+    "title": "סנסבריה מקבוצה",
+    "category": "garden2",
+    "status": "available",
+    "description": "",
+    "images": ["snake-plant-cluster-real.jpg"],
+    "thumbnail": "snake-plant-cluster-silhouette.jpg"
+  },
+  {
+    "id": "syngonium",
+    "title": "סינגוניום",
+    "category": "garden2",
+    "status": "available",
+    "description": "",
+    "images": ["syngonium-real.jpg"],
+    "thumbnail": "syngonium-silhouette.jpg"
+  },
+  {
+    "id": "ninja-airfryer",
+    "title": "נינג'ה מטגן אוויר",
+    "category": "kitchen",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-airfryer.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "ninja-blender",
+    "title": "נינג'ה בלנדר",
+    "category": "kitchen",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-blender.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "instant-pot",
+    "title": "אינסטנט פוט",
+    "category": "kitchen",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-instantpot.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "kenwood-mixer",
+    "title": "מיקסר קנווד",
+    "category": "kitchen",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-kenwood.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "handheld-mixer",
+    "title": "מיקסר ידני",
+    "category": "kitchen",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-handmixer.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "tami4-bubble",
+    "title": "תמי 4 באבל",
+    "category": "kitchen",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-tami4.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "fridge",
+    "title": "מקרר",
+    "category": "kitchen",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-fridge.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "freezer",
+    "title": "מקפיא",
+    "category": "kitchen",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-freezer.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "dishwasher",
+    "title": "מדיח כלים",
+    "category": "kitchen",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-dishwasher.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "washing-machine",
+    "title": "מכונת כביסה",
+    "category": "kitchen",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-washer.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "dryer",
+    "title": "מייבש כביסה",
+    "category": "kitchen",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-dryer.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "robot-vacuum",
+    "title": "רובוט שואב אבק",
+    "category": "kitchen",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-robovac.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "dreame-vacuum-mop",
+    "title": "שואב Dreame",
+    "category": "kitchen",
+    "status": "reserved",
+    "recipient": "אוגיללה",
+    "description": "",
+    "images": ["placeholder-dreame.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "tv",
+    "title": "טלוויזיה",
+    "category": "kitchen",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-tv.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "creality-k1",
+    "title": "מדפסת 3D Creality K1",
+    "category": "kitchen",
+    "status": "gone",
+    "recipient": "שחר",
+    "description": "כולל פילמנטים ומייבש פילמנטים",
+    "images": ["placeholder-creality-k1.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "air-compressor",
+    "title": "מדחס אוויר",
+    "category": "tools",
+    "status": "reserved",
+    "recipient": "אוגיללה",
+    "description": "",
+    "images": ["placeholder-compressor.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "makita-table-saw",
+    "title": "שולחן ניסור Makita",
+    "category": "tools",
+    "status": "reserved",
+    "recipient": "אוגיללה",
+    "description": "",
+    "images": ["placeholder-makita-saw.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "wood-lathe",
+    "title": "מחרטת עץ",
+    "category": "tools",
+    "status": "reserved",
+    "recipient": "תומר",
+    "description": "",
+    "images": ["placeholder-lathe.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "laser-cutter",
+    "title": "מכונת לייזר",
+    "category": "tools",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-laser.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "hyundai-i20",
+    "title": "Hyundai i20",
+    "category": "other",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-i20.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "hyundai-i10",
+    "title": "Hyundai i10",
+    "category": "other",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-i10.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "antique-dresser",
+    "title": "שידה עתיקה",
+    "category": "furniture",
+    "status": "available",
+    "description": "",
+    "images": ["antique-dresser-real.jpg"],
+    "thumbnail": "antique-dresser-silhouette.jpg"
+  },
+  {
+    "id": "sideboard",
+    "title": "מזנון",
+    "category": "furniture",
+    "status": "available",
+    "description": "",
+    "images": ["sideboard-real.jpg"],
+    "thumbnail": "sideboard-silhouette.jpg"
+  },
+  {
+    "id": "record-player",
+    "title": "פטפון",
+    "category": "furniture",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-record-player.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "coffee-table",
+    "title": "שולחן סלון",
+    "category": "furniture",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-coffee-table.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "sofa",
+    "title": "ספה",
+    "category": "furniture",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-sofa.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "couch",
+    "title": "כורסה",
+    "category": "furniture",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-couch.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "nice-chair",
+    "title": "כורסה מהודרת",
+    "category": "furniture",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-chair.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "large-closet",
+    "title": "ארון גדול",
+    "category": "furniture",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-closet.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "ikea-bookshelves",
+    "title": "מדפי איקאה",
+    "category": "furniture",
+    "status": "available",
+    "description": "",
+    "images": ["placeholder-bookshelves.jpg"],
+    "thumbnail": ""
+  },
+  {
+    "id": "entrance-table",
+    "title": "שולחן כניסה",
+    "category": "furniture",
+    "status": "available",
+    "description": "",
+    "images": ["entrance-table-real.jpg"],
+    "thumbnail": "entrance-table-silhouette.jpg"
+  },
+  {
+    "id": "african-mask",
+    "title": "מסיכה אפריקנית",
+    "category": "decor",
+    "status": "reserved",
+    "recipient": "אוגיללה",
+    "description": "",
+    "images": ["african-mask-real.jpg"],
+    "thumbnail": "african-mask-silhouette.jpg"
+  },
+  {
+    "id": "dolls",
+    "title": "בובות אפריקאיות",
+    "category": "decor",
+    "status": "reserved",
+    "recipient": "אוגיללה",
+    "description": "",
+    "images": ["dolls-real.jpg"],
+    "thumbnail": "dolls-silhouette.jpg"
+  },
+  {
+    "id": "shield",
+    "title": "מגן אפריקאי",
+    "category": "decor",
+    "status": "reserved",
+    "recipient": "אוגיללה",
+    "description": "",
+    "images": ["shield-real.jpg"],
+    "thumbnail": "shield-silhouette.jpg"
+  }
+]
