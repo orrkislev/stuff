@@ -256,7 +256,7 @@ function itemThumb(item, size) {
 }
 
 function statusChip(item) {
-  if (item.status === 'reserved') return '<span class="chip chip-reserved">שמור</span>';
+  if (item.status === 'reserved') return '<span class="chip chip-reserved">' + (item.recipient ? 'שמור ל' + esc(item.recipient) : 'שמור') + '</span>';
   if (item.status === 'sold') return '<span class="chip chip-sold">נמכר</span>';
   if (item.status === 'gone') return '<span class="chip chip-gone">' + (item.recipient ? 'ניתן ל' + esc(item.recipient) : 'ניתן') + '</span>';
   return '<span class="chip chip-avail">זמין</span>';

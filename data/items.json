@@ -350,7 +350,8 @@
     "id": "antique-dresser",
     "title": "שידה עתיקה",
     "category": "furniture",
-    "status": "available",
+    "status": "reserved",
+    "recipient": "שחר",
     "description": "",
     "images": ["antique-dresser-real.jpg"],
     "thumbnail": "antique-dresser-silhouette.jpg"
