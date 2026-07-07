@@ -322,8 +322,8 @@
     "status": "gone",
     "recipient": "שחר",
     "description": "כולל פילמנטים ומייבש פילמנטים",
-    "images": ["placeholder-creality-k1.jpg"],
-    "thumbnail": ""
+    "images": ["creality-k1-real.jpg"],
+    "thumbnail": "creality-k1-silhouette.jpg"
   },
   {
     "id": "air-compressor",
