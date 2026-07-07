@@ -92,7 +92,7 @@
   {
     "id": "patio-furniture",
     "title": "ריהוט מרפסת",
-    "category": "garden",
+    "category": "furniture",
     "status": "available",
     "description": "",
     "images": ["patio-furniture-real.jpg"],
@@ -109,7 +109,7 @@
   },
   {
     "id": "fishbone-cactus",
-    "title": "קקטוס פישבון",
+    "title": "מלכת הלילה",
     "category": "garden2",
     "status": "available",
     "description": "",
@@ -154,7 +154,7 @@
   },
   {
     "id": "spider-plant",
-    "title": "צמח אלמנה",
+    "title": "ירקה",
     "category": "garden2",
     "status": "available",
     "description": "",
@@ -524,7 +524,7 @@
   {
     "id": "double-bed",
     "title": "מיטה זוגית איקאה",
-    "category": "bedroom",
+    "category": "furniture",
     "status": "available",
     "description": "",
     "images": [],
@@ -533,7 +533,7 @@
   {
     "id": "kids-bed-geva",
     "title": "מיטת יחיד - גבע",
-    "category": "kids",
+    "category": "furniture",
     "status": "available",
     "description": "",
     "images": [],
@@ -542,7 +542,7 @@
   {
     "id": "kids-bed-emek",
     "title": "מיטת יחיד - אמק",
-    "category": "kids",
+    "category": "furniture",
     "status": "available",
     "description": "",
     "images": [],
