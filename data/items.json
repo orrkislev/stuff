@@ -117,6 +117,15 @@
     "thumbnail": "fishbone-cactus-silhouette.jpg"
   },
   {
+    "id": "zigzag-cactus",
+    "title": "צמח זיגזג",
+    "category": "garden2",
+    "status": "available",
+    "description": "",
+    "images": ["zigzag-cactus-real.jpg"],
+    "thumbnail": "zigzag-cactus-silhouette.jpg"
+  },
+  {
     "id": "fiddle-leaf-fig",
     "title": "פיקוס כינור",
     "category": "garden2",
