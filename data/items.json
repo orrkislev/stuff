@@ -72,6 +72,33 @@
     "thumbnail": "jade-plant-silhouette.jpg"
   },
   {
+    "id": "dracaena",
+    "title": "דרצנה",
+    "category": "garden",
+    "status": "available",
+    "description": "",
+    "images": ["dracaena-real.jpg"],
+    "thumbnail": "dracaena-silhouette.jpg"
+  },
+  {
+    "id": "mother-in-law-chair",
+    "title": "כסא החותנת",
+    "category": "garden",
+    "status": "available",
+    "description": "",
+    "images": ["mother-in-law-chair-real.jpg"],
+    "thumbnail": "mother-in-law-chair-silhouette.jpg"
+  },
+  {
+    "id": "patio-furniture",
+    "title": "ריהוט מרפסת",
+    "category": "garden",
+    "status": "available",
+    "description": "",
+    "images": ["patio-furniture-real.jpg"],
+    "thumbnail": "patio-furniture-silhouette.jpg"
+  },
+  {
     "id": "fern",
     "title": "שרך",
     "category": "garden2",
@@ -158,8 +185,8 @@
     "category": "kitchen",
     "status": "available",
     "description": "",
-    "images": ["placeholder-airfryer.jpg"],
-    "thumbnail": ""
+    "images": ["ninja-airfryer-real.jpg"],
+    "thumbnail": "ninja-airfryer-silhouette.jpg"
   },
   {
     "id": "ninja-blender",
@@ -203,8 +230,8 @@
     "category": "kitchen",
     "status": "available",
     "description": "",
-    "images": ["placeholder-tami4.jpg"],
-    "thumbnail": ""
+    "images": ["tami4-bubble-real.jpg"],
+    "thumbnail": "tami4-bubble-silhouette.jpg"
   },
   {
     "id": "fridge",
@@ -257,8 +284,8 @@
     "category": "kitchen",
     "status": "available",
     "description": "",
-    "images": ["placeholder-robovac.jpg"],
-    "thumbnail": ""
+    "images": ["robot-vacuum-real.jpg"],
+    "thumbnail": "robot-vacuum-silhouette.jpg"
   },
   {
     "id": "dreame-vacuum-mop",
@@ -267,8 +294,8 @@
     "status": "reserved",
     "recipient": "אוגיללה",
     "description": "",
-    "images": ["placeholder-dreame.jpg"],
-    "thumbnail": ""
+    "images": ["dreame-vacuum-mop-real.jpg"],
+    "thumbnail": "dreame-vacuum-mop-silhouette.jpg"
   },
   {
     "id": "tv",
@@ -316,8 +343,8 @@
     "status": "reserved",
     "recipient": "תומר",
     "description": "",
-    "images": ["placeholder-lathe.jpg"],
-    "thumbnail": ""
+    "images": ["wood-lathe-real.jpg"],
+    "thumbnail": "wood-lathe-silhouette.jpg"
   },
   {
     "id": "laser-cutter",
@@ -336,6 +363,24 @@
     "description": "",
     "images": ["placeholder-i20.jpg"],
     "thumbnail": ""
+  },
+  {
+    "id": "training-bike",
+    "title": "אופני כושר",
+    "category": "other",
+    "status": "available",
+    "description": "",
+    "images": ["training-bike-real.jpg"],
+    "thumbnail": "training-bike-silhouette.jpg"
+  },
+  {
+    "id": "sewing-machine",
+    "title": "מכונת תפירה",
+    "category": "other",
+    "status": "available",
+    "description": "",
+    "images": ["sewing-machine-real.jpg"],
+    "thumbnail": "sewing-machine-silhouette.jpg"
   },
   {
     "id": "hyundai-i10",
@@ -366,13 +411,22 @@
     "thumbnail": "sideboard-silhouette.jpg"
   },
   {
-    "id": "record-player",
-    "title": "פטפון",
+    "id": "basket-dresser",
+    "title": "שידת סלסלות",
     "category": "furniture",
     "status": "available",
     "description": "",
-    "images": ["placeholder-record-player.jpg"],
-    "thumbnail": ""
+    "images": ["basket-dresser-real.jpg"],
+    "thumbnail": "basket-dresser-silhouette.jpg"
+  },
+  {
+    "id": "record-player",
+    "title": "ארון פטיפון",
+    "category": "furniture",
+    "status": "available",
+    "description": "",
+    "images": ["record-player-real.jpg"],
+    "thumbnail": "record-player-silhouette.jpg"
   },
   {
     "id": "coffee-table",
@@ -380,8 +434,8 @@
     "category": "furniture",
     "status": "available",
     "description": "",
-    "images": ["placeholder-coffee-table.jpg"],
-    "thumbnail": ""
+    "images": ["coffee-table-real.jpg"],
+    "thumbnail": "coffee-table-silhouette.jpg"
   },
   {
     "id": "sofa",
@@ -389,8 +443,8 @@
     "category": "furniture",
     "status": "available",
     "description": "",
-    "images": ["placeholder-sofa.jpg"],
-    "thumbnail": ""
+    "images": ["sofa-real.jpg"],
+    "thumbnail": "sofa-silhouette.jpg"
   },
   {
     "id": "couch",
@@ -398,8 +452,8 @@
     "category": "furniture",
     "status": "available",
     "description": "",
-    "images": ["placeholder-couch.jpg"],
-    "thumbnail": ""
+    "images": ["couch-real.jpg"],
+    "thumbnail": "couch-silhouette.jpg"
   },
   {
     "id": "nice-chair",

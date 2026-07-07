@@ -504,12 +504,50 @@ document.getElementById('groups').addEventListener('wheel', e => {
   setTimeout(() => wheelLock = false, 550);
 }, { passive: false });
 
+/* Item navigation with arrow keys within current section */
+function selectItem(groupEl, item, catId) {
+  var itemId = item.id;
+  if (STATE.search.catId === catId) { STATE.search.selected = itemId; }
+  else { STATE.selected[catId] = itemId; }
+  setHero(groupEl, item);
+  bindHeroClick(groupEl);
+  var grid = groupEl.querySelector('.grid');
+  if (grid) {
+    grid.querySelectorAll('.cell').forEach(function(x) { x.classList.remove('selected'); });
+    var cell = grid.querySelector('.cell[data-item="' + itemId + '"]');
+    if (cell) { cell.classList.add('selected'); cell.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+  }
+}
+function navigateItem(dir) {
+  var cats = getDisplayCats();
+  var cat = cats[STATE.currentSection];
+  if (!cat) return;
+  var groupEl = document.querySelector('.group[data-cat="' + cat.id + '"]');
+  if (!groupEl) return;
+  var items, selectedId;
+  if (STATE.search.catId === cat.id) {
+    items = filterItems(STATE.search.query);
+    selectedId = STATE.search.selected;
+  } else {
+    items = itemsForCat(cat.id);
+    selectedId = STATE.selected[cat.id];
+  }
+  if (!items.length) return;
+  var idx = items.findIndex(function(i) { return i.id === selectedId; });
+  if (idx === -1) { if (dir === 'down') selectItem(groupEl, items[0], cat.id); return; }
+  var newIdx = dir === 'down' ? Math.min(idx + 1, items.length - 1) : Math.max(idx - 1, 0);
+  if (newIdx === idx) return;
+  selectItem(groupEl, items[newIdx], cat.id);
+}
+
 document.addEventListener('keydown', e => {
   if (document.getElementById('viewer').classList.contains('open')) return;
   if (e.key === 'Escape' && STATE.search.catId) { exitSearch(); return; }
   if (document.activeElement && document.activeElement.classList.contains('group-search')) return;
-  if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { goToSection(STATE.currentSection + 1); }
-  else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { goToSection(STATE.currentSection - 1); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); navigateItem('down'); }
+  else if (e.key === 'ArrowRight') { e.preventDefault(); navigateItem('up'); }
+  else if (e.key === 'ArrowDown') { goToSection(STATE.currentSection + 1); }
+  else if (e.key === 'ArrowUp') { goToSection(STATE.currentSection - 1); }
 });
 
 /* Hide scroll hint after first interaction */
