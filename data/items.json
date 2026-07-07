@@ -456,15 +456,6 @@
     "thumbnail": "couch-silhouette.jpg"
   },
   {
-    "id": "nice-chair",
-    "title": "כורסה מהודרת",
-    "category": "furniture",
-    "status": "available",
-    "description": "",
-    "images": ["placeholder-chair.jpg"],
-    "thumbnail": ""
-  },
-  {
     "id": "large-closet",
     "title": "ארון גדול",
     "category": "furniture",
@@ -520,5 +511,50 @@
     "description": "",
     "images": ["shield-real.jpg"],
     "thumbnail": "shield-silhouette.jpg"
+  },
+  {
+    "id": "double-bed",
+    "title": "מיטה זוגית איקאה",
+    "category": "bedroom",
+    "status": "available",
+    "description": "",
+    "images": [],
+    "thumbnail": ""
+  },
+  {
+    "id": "kids-bed-geva",
+    "title": "מיטת יחיד - גבע",
+    "category": "kids",
+    "status": "available",
+    "description": "",
+    "images": [],
+    "thumbnail": ""
+  },
+  {
+    "id": "kids-bed-emek",
+    "title": "מיטת יחיד - אמק",
+    "category": "kids",
+    "status": "available",
+    "description": "",
+    "images": [],
+    "thumbnail": ""
+  },
+  {
+    "id": "playhouse",
+    "title": "בית משחק",
+    "category": "kids",
+    "status": "available",
+    "description": "",
+    "images": [],
+    "thumbnail": ""
+  },
+  {
+    "id": "art-supplies",
+    "title": "ציוד אמנות",
+    "category": "other",
+    "status": "available",
+    "description": "",
+    "images": [],
+    "thumbnail": ""
   }
 ]
