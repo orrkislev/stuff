@@ -391,7 +391,7 @@ function bindCells(scope) {
       if (STATE.search.catId === catId) STATE.search.selected = itemId;
       else STATE.selected[catId] = itemId;
       const item = STATE.items.find(i => i.id === itemId);
-      if (item) setHero(groupEl, item);
+      if (item) { setHero(groupEl, item); updateUrl(itemId); }
       c.parentElement.querySelectorAll('.cell').forEach(x => x.classList.remove('selected'));
       c.classList.add('selected');
       bindHeroClick(groupEl);
@@ -465,6 +465,13 @@ function renderPager(cats) {
 function setActiveSection(i) {
   STATE.currentSection = i;
   document.querySelectorAll('.pdot').forEach((d, idx) => d.classList.toggle('active', idx === i));
+  // Update URL to reflect the selected item in the now-visible section
+  var cats = getDisplayCats();
+  var cat = cats[i];
+  if (cat) {
+    var selectedId = STATE.search.catId === cat.id ? STATE.search.selected : STATE.selected[cat.id];
+    if (selectedId) updateUrl(selectedId);
+  }
 }
 function goToSection(i) {
   const secs = document.querySelectorAll('.group');
@@ -510,6 +517,7 @@ function selectItem(groupEl, item, catId) {
   if (STATE.search.catId === catId) { STATE.search.selected = itemId; }
   else { STATE.selected[catId] = itemId; }
   setHero(groupEl, item);
+  updateUrl(itemId);
   bindHeroClick(groupEl);
   var grid = groupEl.querySelector('.grid');
   if (grid) {
@@ -667,6 +675,13 @@ function bindHeroClick(groupEl) {
       const img = hero.querySelector('.hero-img');
       if (img && img.style.opacity === '1') openViewer(img.src);
     };
+  }
+}
+
+// Update URL when an item is selected (replaceState to avoid history spam)
+function updateUrl(itemId) {
+  if (itemId && location.hash !== '#/item/' + itemId) {
+    history.replaceState(null, '', '#/item/' + itemId);
   }
 }
 
