@@ -269,12 +269,13 @@
     "id": "kenwood-mixer",
     "title": "מיקסר קנווד",
     "category": "kitchen",
-    "status": "available",
+    "status": "reserved",
     "description": "",
     "images": [
       "placeholder-kenwood.jpg"
     ],
-    "thumbnail": ""
+    "thumbnail": "",
+    "recipient": "סתו"
   },
   {
     "id": "handheld-mixer",
