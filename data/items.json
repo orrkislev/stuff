@@ -405,7 +405,7 @@
     "id": "air-compressor",
     "title": "מדחס אוויר",
     "category": "tools",
-    "status": "reserved",
+    "status": "gone",
     "recipient": "אוגיללה",
     "description": "",
     "images": [
@@ -417,7 +417,7 @@
     "id": "makita-table-saw",
     "title": "שולחן ניסור Makita",
     "category": "tools",
-    "status": "reserved",
+    "status": "gone",
     "recipient": "אוגיללה",
     "description": "",
     "images": [
@@ -474,12 +474,13 @@
     "id": "sewing-machine",
     "title": "מכונת תפירה",
     "category": "other",
-    "status": "available",
+    "status": "gone",
     "description": "",
     "images": [
       "sewing-machine-real.jpg"
     ],
-    "thumbnail": "sewing-machine-silhouette.jpg"
+    "thumbnail": "sewing-machine-silhouette.jpg",
+    "recipient": "אוגיללה"
   },
   {
     "id": "hyundai-i10",
