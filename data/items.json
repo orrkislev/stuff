@@ -520,12 +520,13 @@
     "id": "basket-dresser",
     "title": "שידת סלסלות",
     "category": "furniture",
-    "status": "available",
+    "status": "reserved",
     "description": "",
     "images": [
       "basket-dresser-real.jpg"
     ],
-    "thumbnail": "basket-dresser-silhouette.jpg"
+    "thumbnail": "basket-dresser-silhouette.jpg",
+    "recipient": "אוגיללה"
   },
   {
     "id": "record-player",
