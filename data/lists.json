@@ -1,0 +1,33 @@
+{
+  "passcode": "loosh",
+  "lists": [
+    {
+      "id": "taking",
+      "name": "נוסע איתנו",
+      "items": [
+        { "id": "laptop-orr", "name": "המחשב הנייד שלי", "category": "אלקטרוניקה" },
+        { "id": "laptop-smadar", "name": "המחשב הנייד של סמדר", "category": "אלקטרוניקה" },
+        { "id": "ipad-geva", "name": "האייפד של גבע", "category": "אלקטרוניקה" },
+        { "id": "switch", "name": "נינטנדו סוויץ'", "category": "אלקטרוניקה" },
+        { "id": "chargers", "name": "מטענים", "category": "אלקטרוניקה", "notes": "מטענים לכל המכשירים" },
+        { "id": "books-kids", "name": "ספרי ילדים", "category": "ספרים" },
+        { "id": "books-other", "name": "ספרים אחרים", "category": "ספרים" },
+        { "id": "books-sandman", "name": "סדרת The Sandman", "category": "ספרים" },
+        { "id": "hygiene", "name": "ציוד היגיינה", "category": "טיפול אישי", "notes": "צחצוח שיניים, גילוח, הדברים של סמדר" },
+        { "id": "medicine", "name": "תרופות", "category": "רפואה" },
+        { "id": "games-toys", "name": "משחקים וצעצועים", "category": "ילדים" },
+        { "id": "documents", "name": "מסמכים חשובים", "category": "מסמכים" },
+        { "id": "cats", "name": "חתולים + תיקים וחטיפים", "category": "חתולים", "notes": "ליזה ויוזף, תיקי נשיאה, אוכל וחטיפים לדרך" },
+        { "id": "wooden-spoon", "name": "הכף המעץ מתומר", "category": "שונות" },
+        { "id": "clothes-comfy", "name": "בגדים נוחים", "category": "ביגוד" },
+        { "id": "clothes-winter", "name": "בגדי חורף", "category": "ביגוד" },
+        { "id": "clothes-fancy", "name": "בגדים מחודשים", "category": "ביגוד" }
+      ]
+    },
+    {
+      "id": "saving",
+      "name": "נשמר אצל ההורים",
+      "items": []
+    }
+  ]
+}
