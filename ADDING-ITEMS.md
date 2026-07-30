@@ -58,10 +58,12 @@
      "price": <number or null>,
      "status": "available",
      "description": "<Hebrew description or empty string>",
-     "images": ["<item-id>-real.jpg"],
+     "images": ["<item-id>-real-1.jpg", "<item-id>-real-2.jpg", "<item-id>-real-3.jpg"],
      "thumbnail": "<item-id>-silhouette.jpg"
    }
    ```
+   - **Multiple images:** `images` array can have multiple entries. The first image is shown by default in the hero. Navigation dots appear below the hero when multiple images exist. Clicking the hero opens the fullscreen viewer where you can swipe/arrow through all images.
+   - **Image naming convention for multiple images:** `<item-id>-real-1.jpg`, `<item-id>-real-2.jpg`, etc. The silhouette/thumbnail is generated from the primary (first) image.
 
 ## Color Palette
 

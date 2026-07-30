@@ -124,9 +124,12 @@
         "title":  "ריהוט מרפסת",
         "category":  "furniture",
         "status":  "available",
-        "description":  "",
+        "description":  "סט פטיו לבן — ספסל דו-מושבי, כורסה ושולחן. כריות בצבע ירוק ופסים צהוב-ירוק.",
         "images":  [
-                       "patio-furniture-real.jpg"
+                       "patio-furniture-real-1.jpg",
+                       "patio-furniture-real-2.jpg",
+                       "patio-furniture-real-3.jpg",
+                       "patio-furniture-real-4.jpg"
                    ],
         "thumbnail":  "patio-furniture-silhouette.jpg"
     },
@@ -458,17 +461,6 @@
         "thumbnail":  "wood-lathe-silhouette.jpg"
     },
     {
-        "id":  "laser-cutter",
-        "title":  "מכונת לייזר",
-        "category":  "tools",
-        "status":  "available",
-        "description":  "",
-        "images":  [
-                       "placeholder-laser.jpg"
-                   ],
-        "thumbnail":  ""
-    },
-    {
         "id":  "hyundai-i20",
         "title":  "Hyundai i20",
         "category":  "other",
@@ -553,9 +545,10 @@
         "title":  "ארון פטיפון",
         "category":  "furniture",
         "status":  "available",
-        "description":  "",
+        "description":  "רוחב 96 ס"מ, עומק 43 ס"מ, גובה 73 ס"מ.",
         "images":  [
-                       "record-player-real.jpg"
+                       "record-player-real.jpg",
+                       "record-player-real-2.jpg"
                    ],
         "thumbnail":  "record-player-silhouette.jpg"
     },
@@ -597,11 +590,13 @@
         "title":  "ארון גדול",
         "category":  "furniture",
         "status":  "available",
-        "description":  "",
+        "description":  "ארון גדול לבן עם דלתות, מגירות ומדפים פנימיים. מתאים לפינה.",
         "images":  [
-                       "placeholder-closet.jpg"
+                       "large-closet-real-1.jpg",
+                       "large-closet-real-2.jpg",
+                       "large-closet-real-3.jpg"
                    ],
-        "thumbnail":  ""
+        "thumbnail":  "large-closet-silhouette.jpg"
     },
     {
         "id":  "ikea-bookshelves",
@@ -726,5 +721,19 @@
 
                    ],
         "thumbnail":  ""
+    },
+    {
+        "id":  "laser-cutter",
+        "title":  "מכונת חיתוך לייזר ACCTEK 6090",
+        "category":  "electronics",
+        "status":  "available",
+        "description":  "שולחן 60×90סמ, לייזר CO2, מתאים לחיתוך וחריטה",
+        "images":  [
+            "laser-cutter-real-1.jpg",
+            "laser-cutter-real-2.jpg",
+            "laser-cutter-real-3.jpg"
+        ],
+        "thumbnail":  "laser-cutter-silhouette.jpg"
     }
 ]
+
