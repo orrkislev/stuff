@@ -37,12 +37,12 @@ async function save(){
   say('✓ נשמר — git commit & push');
 }
 
+let saveTimer;
 function setDirty(v){
   dirty = v;
-  const b = document.getElementById('ed-save');
-  if(b){ b.disabled = !v; b.textContent = v ? '● שמור' : 'שמור'; }
+  clearTimeout(saveTimer);
+  if(v) saveTimer = setTimeout(() => save().catch(e => say(e.message, 1)), 800);   // autosave
 }
-window.addEventListener('beforeunload', e => { if(dirty){ e.preventDefault(); e.returnValue = ''; } });
 
 let sayTimer;
 function say(t, sticky){
@@ -61,24 +61,12 @@ const _setHero = window.setHero;
 window.setHero = function(g, i){ _setHero(g, i); if(on) decorateHero(g); };
 function refresh(){ setDirty(true); window.renderGroups(); }
 
-/* ---------- the toolbar ---------- */
+/* ---------- status line ---------- */
 
 const bar = document.createElement('div');
 bar.className = 'ed-bar';
-bar.innerHTML =
-  '<button id="ed-on">✎ עריכה</button>' +
-  '<span class="ed-only"><button id="ed-save" disabled>שמור</button>' +
-  '<button id="ed-off">יציאה</button></span>' +
-  '<span id="ed-say"></span>';
+bar.innerHTML = '<span id="ed-say"></span>';
 document.body.appendChild(bar);
-document.getElementById('ed-on').onclick = () => connect().catch(e => say(e.message, 1));
-document.getElementById('ed-save').onclick = () => save().catch(e => say(e.message, 1));
-document.getElementById('ed-off').onclick = () => {
-  if(dirty && !confirm('יש שינויים שלא נשמרו. לצאת?')) return;
-  on = false; document.body.classList.remove('editing');
-  STATE.categories = STATE.allCategories.filter(c => STATE.items.some(i => i.category === c.id));
-  window.renderGroups();
-};
 
 const newFiles = Object.assign(document.createElement('input'), {type:'file', accept:'image/*', multiple:true});
 newFiles.style.display = 'none';
@@ -127,8 +115,8 @@ function decorate(){
     const grid = g.querySelector('.grid');
     if(grid && !grid.querySelector('.ed-add')){
       const add = document.createElement('div');
-      add.className = 'cell ed-add'; add.title = 'פריט חדש מתמונה'; add.textContent = '+';
-      add.onclick = () => pickFiles(fs => newItem(cat, fs));
+      add.className = 'cell ed-add'; add.title = 'פריט חדש'; add.textContent = '+';
+      add.onclick = () => newItem(cat);
       grid.insertBefore(add, grid.querySelector('.cell.empty') || null);
     }
   });
@@ -204,6 +192,16 @@ function decorateHero(groupEl){
       chip.style.cursor = 'pointer';
       chip.title = 'לחץ לשינוי סטטוס';
       chip.onclick = e => { e.stopPropagation(); cycleStatus(it); };
+      if(it.status === 'reserved' || it.status === 'gone'){
+        const recip = document.createElement('span');
+        recip.className = 'hero-recip' + (it.recipient ? '' : ' ed-empty');
+        recip.textContent = it.recipient || '';
+        chip.after(recip);
+        editable(recip, t => {
+          if(t) it.recipient = t; else delete it.recipient;
+          refresh();
+        }, true);
+      }
     }
   }
 }
@@ -232,10 +230,7 @@ function repaintCell(it){
 
 function cycleStatus(it){
   it.status = STATUSES[(STATUSES.indexOf(it.status) + 1) % STATUSES.length];
-  if(it.status === 'reserved' || it.status === 'gone'){
-    const who = prompt('למי? (ריק = בלי שם)', it.recipient || '');
-    if(who) it.recipient = who; else delete it.recipient;
-  } else delete it.recipient;
+  if(it.status !== 'reserved' && it.status !== 'gone') delete it.recipient;
   refresh();
 }
 
@@ -271,7 +266,12 @@ async function addImages(it, files){
 // paste photos straight into the item on screen; a first photo also gets the new-item treatment
 document.addEventListener('paste', async e => {
   if(!on) return;
-  const files = [...(e.clipboardData ? e.clipboardData.files : [])].filter(f => f.type.startsWith('image/'));
+  const dt = e.clipboardData;
+  if(!dt) return;
+  // some sources expose the image only through items[], not files[]
+  const files = (dt.files.length ? [...dt.files]
+    : [...dt.items].filter(i => i.kind === 'file').map(i => i.getAsFile()).filter(Boolean))
+    .filter(f => f.type.startsWith('image/'));
   if(!files.length) return;
   e.preventDefault();
   const cat = getDisplayCats()[STATE.currentSection];
@@ -289,23 +289,14 @@ document.addEventListener('paste', async e => {
   }catch(err){ say('שגיאה: ' + err.message, 1); }
 });
 
-async function newItem(catId, files){
-  let d = {};
-  if(env.OPENROUTER_API_KEY){
-    say('✨ מזהה את הפריט…', 1);
-    try{ d = await aiSuggest(files[0], null); }catch(e){ say('AI נכשל: ' + e.message, 1); }
-  }
-  const id = prompt('מזהה באנגלית (משמש לשמות הקבצים)', d.id || '');
-  if(!id) return say('בוטל');
-  if(STATE.items.some(i => i.id === id)) return say('מזהה כפול', 1);
-  const it = {id, title: d.title || 'ללא שם', category: catId, status: 'available',
-              description: d.description || '', images: [], thumbnail: ''};
-  STATE.items.push(it);
+function newItem(catId){
+  let n = STATE.items.length + 1, id;
+  do { id = 'item-' + (n++); } while(STATE.items.some(i => i.id === id));
+  STATE.items.push({id, title: 'ללא שם', category: catId, status: 'available',
+                    description: '', images: [], thumbnail: ''});
   STATE.selected[catId] = id;
-  say('שומר תמונות…', 1);
-  await addImages(it, files);
-  try{ say('◼ יוצר סילואט…', 1); await silhouette(it); }catch(e){ /* photo may be unusable */ }
-  say('✓ נוצר — בדוק את הפרטים');
+  refresh();
+  say('פריט חדש — הדבק תמונה (Ctrl+V)');
 }
 
 /* ---------- AI (OpenRouter, key from .env) ---------- */
@@ -362,13 +353,35 @@ async function aiFill(it){
   }catch(e){ say('שגיאה: ' + e.message, 1); }
 }
 
-/* ---------- silhouette: scripts/silhouette.py, ported to canvas ---------- */
+/* ---------- silhouette: Grok Imagine, canvas fallback ---------- */
 
 async function silhouette(it, bg){
   const src = it.images.find(n => !n.startsWith('placeholder-'));
   if(!src) throw new Error('צריך תמונה קודם');
   bg = bg || '#DDD6CA';
   const hex = COLORS[STATE.items.indexOf(it) % COLORS.length];
+  let blob;
+  try{
+    say('◼ Grok מצייר סילואט…', 1);
+    const r = await fetch('/api/silhouette', {
+      method: 'POST',
+      body: JSON.stringify({image: (await shrink(await imgFile(src), 1024)).toDataURL('image/jpeg', .85), color: hex, bg})
+    });
+    if(!r.ok) throw new Error((await r.json().catch(() => ({}))).error || r.status);
+    blob = await r.blob();
+  }catch(e){
+    say('Grok נכשל (' + e.message + ') — סילואט מקומי', 1);
+    blob = await localSilhouette(src, hex, bg);
+  }
+  const name = it.id + '-silhouette.jpg';
+  await writeFile('images/' + name, blob);
+  it.thumbnail = name;
+  refresh();
+  say('✓ סילואט');
+}
+
+// scripts/silhouette.py ported to canvas — used when there's no xAI key or the call fails
+async function localSilhouette(src, hex, bg){
   const c = await shrink(await imgFile(src), 900), ctx = c.getContext('2d'), w = c.width, h = c.height;
   const d = ctx.getImageData(0, 0, w, h).data;
   const m = new Uint8Array(w * h);
@@ -395,29 +408,15 @@ async function silhouette(it, bg){
     out.data[i*4] = p[0]; out.data[i*4+1] = p[1]; out.data[i*4+2] = p[2]; out.data[i*4+3] = 255;
   }
   ctx.putImageData(out, 0, 0);
-  const blob = await new Promise(res => c.toBlob(res, 'image/jpeg', .9));
-  const name = it.id + '-silhouette.jpg';
-  await writeFile('images/' + name, blob);
-  it.thumbnail = name;
-  if(!it.images.includes(name)) { /* thumbnail lives outside images[] */ }
-  refresh();
-  say('✓ סילואט');
+  return new Promise(res => c.toBlob(res, 'image/jpeg', .9));
 }
 
 /* ---------- styles ---------- */
 
 document.head.insertAdjacentHTML('beforeend', '<style>' + `
-.ed-bar{position:fixed;bottom:10px;right:12px;z-index:60;display:flex;gap:6px;align-items:center;
-  background:rgba(240,235,224,.94);border:1px solid var(--border);border-radius:10px;padding:6px 8px;
-  box-shadow:0 2px 10px rgba(0,0,0,.12);font-family:'Heebo',sans-serif}
-.ed-bar button{font:inherit;font-size:13px;padding:4px 10px;border:1px solid var(--border);
-  background:#fff;color:var(--text);border-radius:6px;cursor:pointer}
-.ed-bar button:hover{background:var(--bg-card)}
-.ed-bar button:disabled{opacity:.4;cursor:default}
-.ed-bar .ed-only{display:none;gap:6px}
-body.editing .ed-bar .ed-only{display:flex}
-body.editing #ed-on{display:none}
-#ed-say{font-size:12px;color:var(--text-muted);max-width:230px}
+.ed-bar{position:fixed;bottom:10px;right:12px;z-index:60;font-family:'Heebo',sans-serif;pointer-events:none}
+#ed-say:not(:empty){display:block;font-size:12px;color:var(--text-muted);max-width:230px;
+  background:rgba(240,235,224,.94);border:1px solid var(--border);border-radius:10px;padding:6px 8px}
 
 .ed-tools{position:absolute;top:8px;right:8px;z-index:12;display:flex;gap:4px;align-items:center;flex-wrap:wrap;
   max-width:calc(100% - 16px);background:rgba(20,18,16,.72);border-radius:8px;padding:4px;backdrop-filter:blur(4px)}
@@ -443,6 +442,8 @@ body.editing .hero-title,body.editing .hero-desc{cursor:text}
 .ed-field:hover{box-shadow:0 0 0 1px rgba(255,255,255,.45)}
 .ed-field:focus{box-shadow:0 0 0 2px var(--status-reserved);background:rgba(0,0,0,.35);border-radius:3px}
 .hero-desc.ed-empty:empty::before{content:'הוסף תיאור…';opacity:.55}
+.hero-recip{font-size:11px;color:var(--status-reserved);cursor:text}
+.hero-recip.ed-empty:empty::before{content:'למי?';opacity:.55}
 body.editing .group-name{cursor:text}
 .cell.ed-add{display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--text-light);
   cursor:pointer;border:1px dashed var(--border)}

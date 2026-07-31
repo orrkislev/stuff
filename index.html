@@ -173,6 +173,21 @@ img{display:block;max-width:100%}
 /* Search trigger - top bar */
 .search-trigger{position:absolute;top:10px;left:16px;background:none;border:none;color:var(--text-muted);cursor:pointer;padding:4px;-webkit-tap-highlight-color:transparent;transition:transform .2s,color .2s}
 .search-trigger:hover{color:var(--text);transform:scale(1.1)}
+.avail-toggle{margin:9px auto 1px;width:max-content;display:flex;align-items:center;gap:9px;cursor:pointer;user-select:none;
+  padding:6px 14px 6px 10px;border:1.5px solid var(--border);border-radius:999px;background:var(--bg-card);
+  box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 1px 2px rgba(0,0,0,.06);
+  transition:border-color .25s,background .25s,box-shadow .25s;-webkit-tap-highlight-color:transparent}
+.avail-toggle input{position:absolute;opacity:0;pointer-events:none}
+.avail-track{width:38px;height:21px;flex-shrink:0;border-radius:999px;background:var(--border);position:relative;transition:background .25s}
+.avail-track::after{content:'';position:absolute;top:2.5px;inset-inline-start:2.5px;width:16px;height:16px;border-radius:50%;
+  background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.28);transition:inset-inline-start .25s cubic-bezier(.4,1.4,.6,1)}
+.avail-label{font-family:'Frank Ruhl Libre',serif;font-size:16px;font-weight:900;letter-spacing:-.3px;color:var(--text-muted);transition:color .25s}
+.avail-toggle:has(input:checked){border-color:var(--accent);background:#fff}
+.avail-toggle:has(input:checked) .avail-track{background:var(--accent)}
+.avail-toggle:has(input:checked) .avail-track::after{inset-inline-start:19.5px}
+.avail-toggle:has(input:checked) .avail-label{color:var(--accent)}
+.avail-toggle:has(input:focus-visible){box-shadow:0 0 0 3px rgba(92,122,106,.35)}
+@media(hover:hover) and (pointer:fine){.avail-toggle:hover{border-color:var(--accent)}.avail-toggle:hover .avail-label{color:var(--text)}}
 
 /* Hero multi-image navigation dots */
 .hero-dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);z-index:3;display:flex;gap:6px;pointer-events:auto}
@@ -205,6 +220,7 @@ img{display:block;max-width:100%}
 <div class="topbar">
   <div class="topbar-title">הדברים</div>
   <div class="topbar-sub">קטלוג · אור וסמדר</div>
+  <label class="avail-toggle"><input type="checkbox" id="availOnly"><span class="avail-track"></span><span class="avail-label">רק זמינים</span></label>
   <button class="search-trigger" id="searchTrigger" aria-label="חיפוש">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
   </button>
@@ -251,15 +267,18 @@ function getItemNum(id) { return pad(STATE.items.findIndex(i => i.id === id) + 1
 
 // The two plant categories always merge into one scrollable "plants" section
 function getDisplayCats() {
-  return STATE.categories.filter(c => c.id !== 'garden2');
+  return STATE.categories.filter(c => c.id !== 'garden2' && itemsForCat(c.id).length);
 }
 function displayCatOf(item) {
   return item.category === 'garden2' ? 'garden' : item.category;
 }
+function availableOnly(items) {
+  return STATE.availOnly ? items.filter(i => !i.status || i.status === 'available') : items;
+}
 function itemsForCat(catId) {
   // no item cap - the grid scrolls
-  if (catId === 'garden') return STATE.items.filter(i => i.category === 'garden' || i.category === 'garden2');
-  return STATE.items.filter(i => i.category === catId);
+  if (catId === 'garden') return availableOnly(STATE.items.filter(i => i.category === 'garden' || i.category === 'garden2'));
+  return availableOnly(STATE.items.filter(i => i.category === catId));
 }
 
 function placeholder(seed, size) { return 'https://picsum.photos/seed/' + seed + '/' + size + '/' + size; }
@@ -315,8 +334,9 @@ const CLOSE_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" 
 
 function filterItems(q) {
   q = (q || '').trim().toLowerCase();
-  if (!q) return STATE.items.slice();
-  return STATE.items.filter(i => i.title.toLowerCase().includes(q) || (i.description && i.description.toLowerCase().includes(q)));
+  const items = availableOnly(STATE.items);
+  if (!q) return items.slice();
+  return items.filter(i => i.title.toLowerCase().includes(q) || (i.description && i.description.toLowerCase().includes(q)));
 }
 
 function cellHTML(it, i, selectedId, catId) {
@@ -608,6 +628,11 @@ document.getElementById('searchTrigger').addEventListener('click', () => {
   const cats = getDisplayCats();
   const cat = cats[STATE.currentSection] || cats[0];
   if (cat) enterSearch(cat.id);
+});
+
+document.getElementById('availOnly').addEventListener('change', e => {
+  STATE.availOnly = e.target.checked;
+  renderGroups();
 });
 
 // Deep-link a specific item (#/item/<id>)
