@@ -46,7 +46,9 @@ The site is designed to be shared with friends/family so they can browse what's 
 
 ## Adding Items
 
-See `ADDING-ITEMS.md` for the full workflow. Summary:
+Easiest: open `admin.html` in Chrome, click "פתח תיקייה", pick this folder. Edits write straight to `data/items.json` and `images/`; then commit & push. It has AI title/description fill (OpenRouter — copy `.env.example` to `.env` and add a key) and in-browser silhouette generation.
+
+See `ADDING-ITEMS.md` for the manual workflow. Summary:
 1. Receive a photo (via Telegram)
 2. Clean it up if messy (Gemini/Nano Banana 2 image editing)
 3. Ask for extra details if useful (dimensions, brand, condition)

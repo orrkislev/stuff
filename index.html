@@ -236,6 +236,7 @@ async function init() {
       fetch('data/categories.json').then(r => r.json())
     ]);
     STATE.items = itemsRes;
+    STATE.allCategories = catRes;
     // only categories that have items
     STATE.categories = catRes.filter(c => itemsRes.some(i => i.category === c.id));
     renderGroups();
@@ -813,7 +814,13 @@ function handleHash() {
   focusItem(item.id);
 }
 window.addEventListener('hashchange', handleHash);
-init().then(() => setTimeout(handleHash, 200));
+init().then(() => {
+  setTimeout(handleHash, 200);
+  // inline editing, local only — never ships to GitHub Pages visitors
+  if (['localhost', '127.0.0.1', '[::1]'].includes(location.hostname)) {
+    document.body.appendChild(Object.assign(document.createElement('script'), { src: 'edit.js' }));
+  }
+});
 </script>
 </body>
 </html>
