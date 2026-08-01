@@ -601,14 +601,14 @@
   },
   {
     "id": "ikea-bookshelves",
-    "title": "מדפי איקאה",
+    "title": "כוורת איקאה",
     "category": "furniture",
     "status": "available",
-    "description": "",
+    "description": "עם מגירות וקופסאות",
     "images": [
-      "placeholder-bookshelves.jpg"
+      "ikea-bookshelves-real-2.png"
     ],
-    "thumbnail": ""
+    "thumbnail": "ikea-bookshelves-silhouette.jpg"
   },
   {
     "id": "entrance-table",
@@ -681,30 +681,36 @@
   },
   {
     "id": "kids-bed-geva",
-    "title": "מיטת יחיד עם אחסון",
+    "title": "מיטת יחיד עם מגירות אחסון",
     "category": "furniture",
     "status": "available",
-    "description": "",
-    "images": [],
-    "thumbnail": ""
+    "description": "מיטה עץ בהיר עם דלתות ומגירה כחולות, מצב טוב, מתאימה לחדר שינה קטן או חדר ילדים",
+    "images": [
+      "kids-bed-geva-real-1.png"
+    ],
+    "thumbnail": "kids-bed-geva-silhouette.jpg"
   },
   {
     "id": "kids-bed-emek",
-    "title": "מיטת יחיד לילד",
+    "title": "מיטת יחיד לילד עם מעקה",
     "category": "furniture",
     "status": "available",
-    "description": "",
-    "images": [],
-    "thumbnail": ""
+    "description": "מיטת עץ בהיר עם מעקה כהה צדדי, נראית במצב טוב, מתאימה לחדר ילדים או נעורים.",
+    "images": [
+      "kids-bed-emek-real-1.png"
+    ],
+    "thumbnail": "kids-bed-emek-silhouette.jpg"
   },
   {
     "id": "playhouse",
-    "title": "בית משחק",
+    "title": "בית משחק פלסטיק",
     "category": "kids",
     "status": "available",
-    "description": "",
-    "images": [],
-    "thumbnail": ""
+    "description": "בית משחק ילדים מפלסטיק צבעוני, ירוק וצהוב עם גג ורוד. נראה במצב טוב, מתאים לפנים הבית או לגינה.",
+    "images": [
+      "playhouse-real-1.png"
+    ],
+    "thumbnail": "playhouse-silhouette.jpg"
   },
   {
     "id": "art-supplies",
