@@ -512,7 +512,7 @@
     "category": "furniture",
     "status": "reserved",
     "recipient": "שחר",
-    "description": "",
+    "description": "רוחב 114, גובה 72, עומק 53",
     "images": [
       "antique-dresser-real.jpg"
     ],
@@ -755,5 +755,40 @@
       "item-65-real-1.png"
     ],
     "thumbnail": "item-65-silhouette.jpg"
+  },
+  {
+    "id": "item-66",
+    "title": "סכין עץ מעוצבת",
+    "category": "decor",
+    "status": "reserved",
+    "description": "סכין דקורטיבית מעץ כהה עם חריטות מפורטות על הלהב והידית, ללא שימוש ככלי חד. מתאים לתצוגה.",
+    "images": [
+      "item-66-real-1.png"
+    ],
+    "thumbnail": "item-66-silhouette.jpg",
+    "recipient": "אוגיללה"
+  },
+  {
+    "id": "item-67",
+    "title": "שולחן צד וינטג'",
+    "category": "furniture",
+    "status": "available",
+    "description": "שולחן צד קטן עם משטח אדום ורגלי עץ, סגנון וינטג', ללא מידות נראות בתמונה",
+    "images": [
+      "item-67-real-1.png"
+    ],
+    "thumbnail": "item-67-silhouette.jpg"
+  },
+  {
+    "id": "item-68",
+    "title": "מסכה עץ טריבאלית",
+    "category": "decor",
+    "status": "reserved",
+    "description": "מסכה מעץ עם חריטות גיאומטריות ופנים מופשטות, מצב טוב, מתאים לתלייה כעיצוב קיר.",
+    "images": [
+      "item-68-real-1.png"
+    ],
+    "thumbnail": "item-68-silhouette.jpg",
+    "recipient": "אוגיללה"
   }
 ]
