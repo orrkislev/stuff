@@ -452,7 +452,7 @@
     "id": "wood-lathe",
     "title": "מחרטת עץ",
     "category": "tools",
-    "status": "reserved",
+    "status": "gone",
     "recipient": "תומר",
     "description": "",
     "images": [
@@ -510,7 +510,7 @@
     "id": "antique-dresser",
     "title": "שידה עתיקה",
     "category": "furniture",
-    "status": "reserved",
+    "status": "gone",
     "recipient": "שחר",
     "description": "רוחב 114, גובה 72, עומק 53",
     "images": [
@@ -545,7 +545,7 @@
     "id": "record-player",
     "title": "ארון פטיפון",
     "category": "furniture",
-    "status": "available",
+    "status": "gone",
     "description": "רוחב 96 ס״מ, עומק 43 ס״מ, גובה 73 ס״מ.",
     "images": [
       "record-player-real.jpg",
@@ -790,5 +790,17 @@
     ],
     "thumbnail": "item-68-silhouette.jpg",
     "recipient": "אוגיללה"
+  },
+  {
+    "id": "item-69",
+    "title": "פלוטר",
+    "category": "tools",
+    "status": "gone",
+    "description": "מסלול ליניארי אלומיניום עם מנוע צעד ודרייבר, נראה כ新 (new) או בשימוש מעט, ללא מידות מדויקות.",
+    "images": [
+      "item-69-real-1.png"
+    ],
+    "thumbnail": "item-69-silhouette.jpg",
+    "recipient": "שחר"
   }
 ]
